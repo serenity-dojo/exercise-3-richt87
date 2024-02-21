@@ -1,8 +1,9 @@
 package com.serenitydojo;
 
-import org.assertj.core.api.AssertJProxySetup;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.io.FileInputStream;
 
 public class WhenCreatingObjects {
 
@@ -12,7 +13,7 @@ public class WhenCreatingObjects {
         String favoriteToy = "Bone";
         int age = 5;
 
-        Dog fido = new Dog();
+        Dog fido = new Dog("Fido", "Bone", 5);
 
         fido.setName("Fido");
         fido.setFavoriteToy("Bone");
@@ -32,4 +33,11 @@ public class WhenCreatingObjects {
 
     }
 
+    @Test
+    public void dog_makes_a_noise(){
+        Dog Fido = new Dog("Fido", "Bone", 5);
+
+        Fido.makeNoise();
+        Fido.feed();
+    }
 }
